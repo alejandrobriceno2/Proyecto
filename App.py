@@ -237,6 +237,7 @@ class App:
                 informacion=informacion['result']['properties']
                 pilotos_vehiculo.append(Personaje(id,informacion["gender"],informacion["height"],informacion["mass"],informacion["hair_color"],informacion["eye_color"],informacion["skin_color"],informacion["birth_year"],informacion["homeworld"]))
     
-    
+
+        
 
 #-----------------------------------------
