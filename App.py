@@ -77,7 +77,8 @@ class App:
                 None
 
             elif menu=='4':
-                None
+                nombre_buscado=input('Ingrese el nombre del personaje que desea buscar: ')
+                self.buscar_personajes(nombre_buscado)
 
             elif menu=='5':
                 None
@@ -237,6 +238,11 @@ class App:
                 informacion=informacion['result']['properties']
                 pilotos_vehiculo.append(Personaje(id,informacion["gender"],informacion["height"],informacion["mass"],informacion["hair_color"],informacion["eye_color"],informacion["skin_color"],informacion["birth_year"],informacion["homeworld"]))
     
+
+    def buscar_personajes(self,nombre_buscado):
+        for personaje in self.personajes_obj:
+            if nombre_buscado.lower() in personaje.nombre.lower():
+                personaje.mostrar_personajes_opcion_cuatro(self.peliculas_obj,self.especies_obj,self.naves_obj,self.vehiculos_obj)
     
 
 #-----------------------------------------
