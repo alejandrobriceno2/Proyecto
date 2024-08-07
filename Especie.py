@@ -15,5 +15,21 @@ class Especie:
         self.mundo_natal=mundo_natal
         self.nombres_personajes_pertenecientes_especie=nombres_prsonajes_pertenecientes_especie
 
-    def mostrar_especies(self):
-        None
+    def mostrar_especies(self,peliculas_obj):
+        print(f'\id: {self.id}')
+        print(f'\tNombre: {self.nombre}')
+        print(f'\tAltura: {self.altura}')
+        print(f'\Clasificacion: {self.clasificacion}')
+        print(f'\Nombre del Planeta de origen: {rq.get(self.mundo_natal).json()['result']['properties']['name']}')
+        print(f'\Lengua materna: {self.lengua_materna}')
+        for personaje in self.nombres_personajes_pertenecientes_especie:
+            personaje.mostrar_nombre_personajes()
+        lista_episodios=[]
+        for x in peliculas_obj:
+            for y in x.especies:
+                if y.nombre==self.nombre:
+                    lista_episodios.append(x.titulo)
+        for episodio in lista_episodios:
+            print(f'\tEpisodio: {episodio}')
+
+        
